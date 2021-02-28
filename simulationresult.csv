@@ -1,0 +1,38 @@
+case:concept:name,concept:name,org:resource,time:timestamp,lifecycle:transition
+0,register request,Ellen,2021-01-01 00:00:00,COMPLETE
+1,register request,Pete,2021-01-01 03:00:15,COMPLETE
+2,register request,Ellen,2021-01-01 05:59:10,COMPLETE
+3,register request,Pete,2021-01-01 09:01:41,SUSPEND
+3,register request,Pete,2021-01-01 11:25:56,COMPLETE
+0,examine casually,Mike,2021-01-01 11:25:56,COMPLETE
+4,register request,Pete,2021-01-01 11:59:23,SUSPEND
+4,register request,Pete,2021-01-01 14:51:14,COMPLETE
+1,examine thoroughly,Sue,2021-01-01 14:51:14,COMPLETE
+5,register request,Mike,2021-01-01 14:55:31,SUSPEND
+5,register request,Mike,2021-01-01 18:29:01,COMPLETE
+2,check ticket,Mike,2021-01-01 18:29:01,COMPLETE
+3,check ticket,Mike,2021-01-01 23:13:15,COMPLETE
+4,check ticket,Mike,2021-01-02 03:05:47,COMPLETE
+5,check ticket,Ellen,2021-01-02 07:31:40,COMPLETE
+0,check ticket,Mike,2021-01-03 03:13:39,COMPLETE
+3,examine casually,Mike,2021-01-03 11:17:41,COMPLETE
+2,examine casually,Ellen,2021-01-03 16:04:36,COMPLETE
+1,check ticket,Pete,2021-01-03 23:09:05,COMPLETE
+4,examine casually,Ellen,2021-01-04 02:22:36,COMPLETE
+5,examine casually,Mike,2021-01-04 03:49:32,COMPLETE
+0,decide,Sara,2021-01-05 01:11:21,COMPLETE
+3,decide,Sara,2021-01-05 08:41:06,COMPLETE
+2,decide,Sara,2021-01-05 12:21:05,COMPLETE
+1,decide,Sara,2021-01-05 14:34:19,COMPLETE
+4,decide,Sara,2021-01-05 21:53:40,COMPLETE
+5,decide,Sara,2021-01-06 07:20:09,COMPLETE
+0,pay compensation,Ellen,2021-01-07 07:52:55,COMPLETE
+3,pay compensation,Ellen,2021-01-07 20:31:10,COMPLETE
+4,pay compensation,Ellen,2021-01-08 10:37:11,COMPLETE
+1,pay compensation,Ellen,2021-01-08 12:19:43,COMPLETE
+2,reinitiate request,Sara,2021-01-08 20:39:27,COMPLETE
+5,pay compensation,Ellen,2021-01-08 23:27:54,COMPLETE
+2,examine casually,Ellen,2021-01-10 02:04:06,COMPLETE
+2,check ticket,Mike,2021-01-11 23:51:57,COMPLETE
+2,decide,Sara,2021-01-13 13:40:16,COMPLETE
+2,pay compensation,Mike,2021-01-15 19:37:09,COMPLETE
