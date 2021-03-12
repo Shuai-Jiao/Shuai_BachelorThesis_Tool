@@ -106,6 +106,38 @@ def result(request):
     global Actresource
     global inputname
     global ProcessTree
+
+
+    global capacity
+    global tracelimit
+    global activitiescapacity
+    global activitylimit
+    global businesshour
+    global businessday
+    global stop
+    global miss
+    global limittime
+    global starttime2
+    global numtrace
+    global tiex
+
+    capacity= ''
+    tracelimit= ''
+
+    activitiescapacity= ''
+    activitylimit= ''
+    businesshour= ''
+    businessday= ''
+    stop= ''
+    miss= ''
+    limittime= ''
+    starttime2= ''
+    numtrace= ''
+
+    RESULT= ''
+    tiex= ''
+
+
     #isclick = 0
     #Watichange = 0
     #logadr = request.POST.get('load')
@@ -133,7 +165,8 @@ def result(request):
     if logtran == '':
         logtran = "lifecycle:transition"
     ADRESS = logadr
-    print(inputname[-3:],"inputname[:-3]")
+    #print(inputname[-3:],"inputname[:-3]")
+
     log = infra.recieve_and_convert_log.convert_log(logadr,logname,logtime,logtran,logstart,logcompl,logreso,logid,inputname[-3:])
     ptree = infra.recieve_and_convert_log.get_processtree(log)
     duration = infra.recieve_and_convert_log.get_duration(log)
@@ -141,8 +174,9 @@ def result(request):
     deviation = infra.recieve_and_convert_log.get_deviation(duration,log)
     Deviation = deviation
     waitingtime = infra.recieve_and_convert_log.waitingtime(log)
+    print(waitingtime,'line 177')
     Waitingtime = waitingtime
-    log = infra.recieve_and_convert_log.convert_log(logadr,logname,logtime,logtran,logstart,logcompl,logreso,logid,inputname[-3:])
+    #log = infra.recieve_and_convert_log.convert_log(logadr,logname,logtime,logtran,logstart,logcompl,logreso,logid,inputname[-3:])
     ptree = infra.recieve_and_convert_log.get_processtree(log)
     ProcessTree = ptree
     #frequency = infra.recieve_and_convert_log.get_waitinhour(log,waitingtime,'n',Watichange)

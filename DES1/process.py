@@ -278,7 +278,7 @@ def simulate_trace(env,process,startID,starttime,csv_writer,i,tracesList,duratio
 
                for k,val in enumerate(duration):
                  if tracesList[i][j] == val[0]:
-                   print(COUNTER[k],info[5][k],i,val[0],info[4],'line 280')
+                   #print(COUNTER[k],info[5][k],i,val[0],info[4],'line 280')
                    if COUNTER[k] >= info[5][k]:
                        if info[4] == 'n':
                            OUTPUT.append('Sorry ID%d, the limit of %s is reached temporarily, this event will be skipped'%((i+startID),val[0]))
@@ -295,7 +295,7 @@ def simulate_trace(env,process,startID,starttime,csv_writer,i,tracesList,duratio
                                    time = convert_timestamp(env.now,starttime)
                                    OUTPUT.append('Sorry ID%d, the limit of %s is reached temporarily, this event will be suspended'%((i+startID),val[0]))
                                    csv_writer.writerow([(i+startID),val[0],simres[i][j],time,"SUSPEND"])
-                                   print(i,val[0],time,'line 298')
+                                   #print(i,val[0],time,'line 298')
                                    WAITING[k] += 1
                                    flag288 = 1
                                nextsuptime = info[8]-(env.now%info[8])
@@ -367,7 +367,7 @@ def simulate_trace(env,process,startID,starttime,csv_writer,i,tracesList,duratio
 
 
                        yield env.process(executor(env,csv_writer,starttime,'ID%d' % name,processlist[k],val[0],time1,k,simres[i][j]))
-                       print(name,starttime,val[0],'line 363')
+                       #print(name,starttime,val[0],'line 363')
                        EXECUTION[k] += 1
                        Processcount[k] -= 1
                        break

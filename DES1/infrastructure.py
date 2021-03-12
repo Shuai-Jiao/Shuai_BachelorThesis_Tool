@@ -15,7 +15,7 @@ from pm4py.algo.filtering.log.timestamp import timestamp_filter
 import time
 import eventlet
 from pm4py.objects.conversion.log import converter as log_converter
-
+import math
 import simpy
 '''
 import process
@@ -52,7 +52,7 @@ global Log
 
 class recieve_and_convert_log:
     """docstring for recieve_and_print_log."""
-
+    @classmethod
     def __init__(self):
         self.activity_duration = []
         self.arrival_rate = None
@@ -94,13 +94,29 @@ class recieve_and_convert_log:
           #print(log)
           #self.event_log = log
         elif xorc == "csv":
-          log_csv = pd.read_csv(adr+'.csv', sep=',')
-          #log_csv = dataframe_utils.convert_timestamp_columns_in_df(log_csv)
-          #self.event_log = log_converter.apply(log_csv)
-          log_csv = dataframe_utils.convert_timestamp_columns_in_df(log_csv)
-          log_csv = log_csv.sort_values('time:timestamp')
-          log = log_converter.apply(log_csv)
-          #print(self.event_log)
+          try:
+              log_csv = pd.read_csv(adr+'.csv', sep=',', encoding='utf-8')
+              #log_csv = pd.read_csv(adr+'.csv', 'r', encoding='utf-8', error_bad_lines=False, lineterminator="\n")
+              #log_csv.head()
+              #print(log_csv,'line 100')
+
+              #log_csv[u'time:timestamp'] = log_csv[u'time:timestamp'].astype(str)
+              #print(log_csv[u'time:timestamp'],"line 103")
+              #log_csv[u'time:timestamp'] = log_csv[u'time:timestamp'].replace("/" , "-")
+              #log_csv = dataframe_utils.convert_timestamp_columns_in_df(log_csv)
+              #self.event_log = log_converter.apply(log_csv)
+              #print(log_csv,'line 105')
+              #print(log_csv['time:timestamp'],'loti is line 107')
+              #log_csv[loti] = log_csv[loti].replace('/','-')
+              log_csv = dataframe_utils.convert_timestamp_columns_in_df(log_csv)
+              log_csv = log_csv.sort_values(loti)
+              log = log_converter.apply(log_csv)
+          except:
+              log_csv = pd.read_csv(adr+'.csv', sep=';', encoding='utf-8')
+              log_csv = dataframe_utils.convert_timestamp_columns_in_df(log_csv)
+              log_csv = log_csv.sort_values(loti)
+              log = log_converter.apply(log_csv)
+          #print(log,'line 114')
         #return self.event_log
         Log = log
         return log
@@ -133,15 +149,20 @@ class recieve_and_convert_log:
                 x = caldur.oneortwo(log,self.logtransi)
                 if x == 2:
                     duration = caldur.getaverageduration(log,self.logname,self.logtime,self.logtransi)
+                    print('line 152')
                 if x == 1:
                     duration = caldur.getaverageduration2(log,self.logname,self.logtime)
+                    print('line 155')
             except:
                 duration = caldur.getaverageduration2(log,self.logname,self.logtime)
+                print('line 158')
         else:
             try:
               duration = caldur.getaverageduration3(log,self.logname,self.logtime,self.logstti,self.logcoti)
+              print('line 159')
             except:
               self.logtime = self.logcoti
+              print('line 161')
               duration = caldur.getaverageduration2(log,self.logname,self.logtime)
         activities = attributes_filter.get_attribute_values(log, self.logname)
         activitiesList=[]
@@ -269,7 +290,7 @@ class recieve_and_convert_log:
 
 
 
-        
+
         if limittime == '':
             timeinterval = self.statics(log)[3]
             fmt = '%Y-%m-%d %H:%M:%S'
@@ -278,8 +299,8 @@ class recieve_and_convert_log:
         else:
             limittime = int(limittime)
         print(limittime,'limittime')
-        '''
-        '''
+
+
         if limittime == '':
             limittime = self.initiallimit(log)[1]
             #limittime = float('inf')
@@ -414,8 +435,10 @@ class recieve_and_convert_log:
                        activitiescapacity1.append(float("inf"))
                    else:
                        activitiescapacity1.append(int(ele[1]))
+
         '''
         '''inf'''
+
 
 
         if businesshour == '':
@@ -529,15 +552,22 @@ class recieve_and_convert_log:
         #@numtrace = input('Please enter the number of generated cases: ')
         #numtrace = ''
         if numtrace == '':
-            numtrace = 100
+            numtrace = 1000
         actdict = self.decisionpoint(Log)[1]
 
 
         #print(tree.operator,tree,"infra line 405")
+        resourceornot = 0
         if converttree == 0:
             activitycount = {}
             for trace in Log:
                 for event in trace:
+                    #print(event[self.logreso],'line 558')
+                    try:
+                       if event[self.logreso] == None or math.isnan(event[self.logreso]):
+                           resourceornot = 1
+                    except:
+                        a = 1
                     if event[self.logname] in activitycount.keys():
                         activitycount[event[self.logname]] += 1/len(Log)
                     else:
@@ -558,7 +588,19 @@ class recieve_and_convert_log:
             print("line 448")
 
 
-        simres = self.simulateresource(Log,log,self.logname,self.logreso)
+        if resourceornot == 0:
+
+           simres = self.simulateresource(Log,log,self.logname,self.logreso)
+        else:
+            print('here i am line 586')
+            simres = []
+            for trace in log:
+                restrace = []
+                for event in trace:
+                    restrace.append('uncertain resource')
+                simres.append(restrace)
+
+
 
         #print(log)
         #dataframe = log_converter.apply(log, variant=log_converter.Variants.TO_DATA_FRAME)
@@ -1285,10 +1327,14 @@ class recieve_and_convert_log:
             next = ptsp[1:-1]
             #retree._children = []
             #print(next,'line 898')
-            #retree._children = childlist.append(self.convertptree(ptsp[1:-1],retree,[]))
+            #retree._children = childlist.append(self.convertptree(ptsp[1:-1],retree,[]))τ
         else:
             retree._operator = None
-            retree._label = ptsp[0].replace("'",'').replace(',','')
+            label = ptsp[0].replace("'",'').replace(',','')
+            if label == 'τ':
+                retree._label = None
+            else:
+                retree._label = label
             #retree._children = []
             next = ptsp[1:]
             #print(next,'line 902')
@@ -1531,26 +1577,31 @@ class recieve_and_convert_log:
         if tree.operator is pt_operator.Operator.LOOP:
             #print("line 158")
             childvalue = {}
-
+            '''
             labellist = []
             self.findlabel(tree,labellist)
             sum = 0
             for label in labellist:
                 sum += actdict[label]
-            evaluatetreelist[tree] = sum/initialvalue
+            '''
+            sum = self.evaluatenode(tree,actdict)
+            #evaluatetreelist[tree] = sum/initialvalue
             #print(tree,labellist,sum,initialvalue,"line 167")
 
             #evaluatetreelist[tree] = evaluatetreelist[tree]/initialvalue
 
             evaluatetreelist[tree.children[0]] = sum/initialvalue
+
             for child in tree.children[1:]:
+                '''
                 childlist = []
                 self.findlabel(child,childlist)
                 sum = 0
 
                 for label in childlist:
                     sum += actdict[label]
-                childvalue[child] = sum
+                '''
+                childvalue[child] = self.evaluatenode(child,actdict)
             dominator = 0
             for value in childvalue.values():
                 dominator += value
@@ -1575,20 +1626,25 @@ class recieve_and_convert_log:
             lenone = 0
             childvalue = {}
             for child in tree.children:
+
                 childlist = []
                 self.findlabel(child,childlist)
                 #print(child,childlist,"childlist line 215")
+                '''
                 sum = 0
 
 
                 for label in childlist:
                     sum += actdict[label]
-                childvalue[child] = sum
+                '''
+                childvalue[child] = self.evaluatenode(child,actdict)
+                #childvalue[child] = sum
+                '''only one activity in this subtree'''
                 if len(childlist) == 1:
 
                     lenone = 1
             dominator = 0
-
+            '''only one element'''
             if len(tree.children)==1 and tree.children[0].label != None:
                 evaluatetreelist[tree.children[0]] = actdict[tree.children[0].label]
 
@@ -1635,9 +1691,13 @@ class recieve_and_convert_log:
                 for key,value in childvalue.items():
                     evaluatetreelist[key] = value/dominator
             '''
+            '''
             for child0 in tree.children:
                 for child in child0.children:
                      self.evaluatetree(child,maxlooplist,actdict,evaluatetreelist[child0],evaluatetreelist)
+            '''
+            for child in tree.children:
+                self.evaluatetree(child,maxlooplist,actdict,evaluatetreelist[child],evaluatetreelist)
         elif tree.operator is pt_operator.Operator.OR:
             print("line 213")
             for child in tree.children:
@@ -1659,6 +1719,50 @@ class recieve_and_convert_log:
         #elif tree.operator == None:
             #if tree.label != None:
                 #evaluatetreelist[tree] = actdict[tree.label]/initialvalue
+
+    @classmethod
+    def evaluatenode(self,node,actdict):
+        if node.operator is pt_operator.Operator.PARALLEL or node.operator is pt_operator.Operator.SEQUENCE:
+            value = 0
+            childlist = []
+            self.findlabel(node,childlist)
+            for child in childlist:
+                value += actdict[child]
+            return value/len(node.children)
+        elif  node.operator is pt_operator.Operator.XOR or node.operator is pt_operator.Operator.OR:
+            value = 0
+            childlist = []
+            self.findlabel(node,childlist)
+            for child in childlist:
+                value += actdict[child]
+            return value
+        elif node.operator is pt_operator.Operator.LOOP:
+            childlist0 = []
+            value = 0
+            self.findlabel(node.children[0],childlist0)
+            for child in childlist0:
+                value += actdict[child]
+            childlist = []
+            for child in node.children[1:]:
+                childlist1 = []
+                list = []
+                self.findlabel(child,childlist1)
+                list += childlist1
+            childlist = childlist + list
+            for child in childlist:
+                value += actdict[child]
+            #print(node,value/2,'line 1750')
+            if list == []:
+                return value
+            else:
+                return value/2
+        elif node.operator is None:
+            childlist = []
+            self.findlabel(node,childlist)
+            if childlist == []:
+                return 0
+            else:
+                return actdict[node.label]
 
     @classmethod
     def initialtrace(self,log):
@@ -1765,7 +1869,7 @@ class recieve_and_convert_log:
         self.evaluatetree(tree,loopdict,actdict,1,evaluatetreelist)
         self.treeevaluation = evaluatetreelist
         self.loopdict = loopdict
-        print(self.loopdict,"1434")
+        #print(self.loopdict,"1434")
         loopdict1 = {}
 
         for key in loopdict.keys():
