@@ -6,21 +6,25 @@ from pm4py.visualization.process_tree import visualizer as pt_visualizer
 import infrastructure as infra
 from pm4py.objects.process_tree import semantics
 import pm4py
+from pm4py.objects.log.importer.xes import importer
 from pm4py.simulation.tree_playout.variants import extensive
 #log = pm4py.read_xes("BPI_Challenge_2012_APP.xes")
 from pm4py.simulation.tree_playout import algorithm as tree_playout
 playout_variant = tree_playout.Variants.EXTENSIVE
 param = tree_playout.Variants.EXTENSIVE.value.Parameters
 
-treelist = "+( ->( 'B', 'C', 'D', 'E' ), 'A', 'G' )"
-treelist1 = treelist.split(" ")
-tree = infra.recieve_and_convert_log.convertptree(treelist1,None,0)
+#treelist = "+( ->( 'B', 'C', 'D', 'E' ), 'A', 'G' )"
+#treelist1 = treelist.split(" ")
+#log0 = importer.apply('/Users/jiao.shuai.1998.12.01outlook.com/code/07.01.2021/DES1/testfile/test.xes')
+log0 = importer.apply('/Users/jiao.shuai.1998.12.01outlook.com/code/07.01.2021/DES1/testfile/test.xes')
+tree = inductive_miner.apply_tree(log0)
+#tree = infra.recieve_and_convert_log.convertptree(treelist1,None,0)
 #tree = pm4py.discover_process_tree_inductive(log)
-sim_log = extensive.apply(tree, parameters={param.MAX_LIMIT_NUM_TRACES: 10})
+sim_log = extensive.apply(tree, parameters={param.MAX_LIMIT_NUM_TRACES: 100})
+print('The generated traces are shown as follow:')
 for trace in sim_log:
-    print('~~~~~~~~~')
-    for event in trace:
-        print(event['concept:name'])
+    print(trace,'~~~~~~~~~')
+
 tree1 = inductive_miner.apply_tree(sim_log)
 print('The previous tree:',tree,'\n',"The new tree:",tree1)
 #sim_variants = pm4py.get_variants(sim_log)

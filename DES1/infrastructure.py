@@ -4,8 +4,9 @@ from pm4py.objects.log.util import dataframe_utils
 from pm4py.objects.conversion.log import converter as log_converter
 import os
 from pm4py.objects.log.importer.xes import importer
-
-
+from pm4py.objects.log.log import EventLog, Trace, Event
+from pm4py.util import xes_constants as xes
+import datetime as datetime1
 from datetime import datetime
 from pm4py.algo.filtering.log.attributes import attributes_filter
 from pm4py.algo.discovery.inductive import algorithm as inductive_miner
@@ -13,7 +14,12 @@ from pm4py.algo.filtering.log.variants import variants_filter
 #from pm4py.algo.filtering.pandas.attributes import attributes_filter
 from pm4py.algo.filtering.log.timestamp import timestamp_filter
 import time
+from pm4py.simulation.tree_playout.variants import extensive
 import eventlet
+
+#log = pm4py.read_xes("BPI_Challenge_2012_APP.xes")
+from pm4py.simulation.tree_playout import algorithm as tree_playout
+
 from pm4py.objects.conversion.log import converter as log_converter
 import math
 import simpy
@@ -552,7 +558,7 @@ class recieve_and_convert_log:
         #@numtrace = input('Please enter the number of generated cases: ')
         #numtrace = ''
         if numtrace == '':
-            numtrace = 1000
+            numtrace = 100
         actdict = self.decisionpoint(Log)[1]
 
 
@@ -581,11 +587,17 @@ class recieve_and_convert_log:
             self.evaluatetree(tree,loopdict,actdict,1,evaluatetreelist)
             self.treeevaluation = evaluatetreelist
             self.loopdict = loopdict
-            log = _semantics.generate_log(tree,evaluatetreelist,loopdict, no_traces = int(numtrace))
+            freqtrace = self.insertfrequenttrace(Log)
+            log = _semantics.generate_log(tree,freqtrace,evaluatetreelist,loopdict, no_traces = int(numtrace))
+
             print(evaluatetreelist,loopdict,"line 445")
         else:
+            playout_variant = tree_playout.Variants.EXTENSIVE
+            param = tree_playout.Variants.EXTENSIVE.value.Parameters
             log = _semantics1.generate_log(tree,actdict, no_traces = int(numtrace))
-            print("line 448")
+            #log = extensive.apply(tree, parameters={param.MAX_LIMIT_NUM_TRACES:int(numtrace)})
+            #log = self.insertfrequenttrace(Log,log0)
+            print(log,"line 448")
 
 
         if resourceornot == 0:
@@ -813,6 +825,60 @@ class recieve_and_convert_log:
 
 
         return (arrivallist,arradeviainday)
+
+
+    @classmethod
+    def insertfrequenttrace(self,log):
+        pattern = {}
+        patternlist = []
+        freqdict = {}
+        index = 0
+        for trace in log:
+            tracelist = []
+            for event in trace:
+                tracelist.append(event[self.logname])
+            '''
+            the key in pattern is the index of the corresponding trace pattern in pattern list
+            the value in pattern is the number of this pattern
+
+            '''
+            if not tracelist in patternlist:
+               patternlist.append(tracelist)
+               pattern[index] = 1
+               index += 1
+            else:
+               pattern[patternlist.index(tracelist)] += 1
+        for key,value in pattern.items():
+            pattern[key] = value/len(log)
+            if pattern[key] >= 0.1:
+                freqdict[key] = pattern[key]
+            '''
+
+            if pattern[key] >= 0.1:
+               #print(pattern[key],patternlist[key],'line 842')
+               range0 = range(0,len(loglist)-1)
+               replaceindex = random.sample(range0,int(pattern[key]*len(loglist)))
+               for i in replaceindex:
+                   trace = Trace()
+                   trace.attributes[xes.DEFAULT_NAME_KEY] = i
+                   #print('line 67')
+                   curr_timestamp = datetime1.datetime.strptime(str(loglist[i][0][self.logtime])[0:19],'%Y-%m-%d %H:%M:%S')
+                   starttime = datetime1.datetime.fromtimestamp(0)
+                   start = int((curr_timestamp-starttime).total_seconds())
+
+                   for label in patternlist[key]:
+                       event = Event()
+
+
+                       event[xes.DEFAULT_NAME_KEY] = label
+                       event[xes.DEFAULT_TIMESTAMP_KEY] = datetime1.datetime.fromtimestamp(start)
+
+                       trace.append(event)
+                       #print(event,'line 73')
+                       start = start + 1
+                   loglist[i] = trace
+            '''
+        return (patternlist,freqdict)
 
 
 
@@ -1885,7 +1951,22 @@ class recieve_and_convert_log:
             #if key.operator == None and key.label == None:
                 #evaluatetreelist1[key] = 0.1
             if not key.parent is None:
-              if key.parent.operator == pt_operator.Operator.XOR:
+              if key.parent.operator == pt_operator.Operator.XOR and (not key.children == [] or not key.label is None):
+                '''key is a silent activity'''
+                #print(key.children,key.label,key,'line 1956')
+                '''
+                if key.children is [] and key.label is None:
+                    tree00 = key.parent
+                    for child in tree00.children:
+                        child.children = None
+                    print(tree00,'line 1960')
+                    if round(evaluatetreelist[key],2) != 0.0:
+                       evaluatetreelist1[tree00] = round(evaluatetreelist[key],2)
+                    else:
+                       evaluatetreelist1[tree00] = round(evaluatetreelist[key],5)
+
+                else:
+                '''
                 if round(evaluatetreelist[key],2) != 0.0:
                    evaluatetreelist1[key] = round(evaluatetreelist[key],2)
                 else:

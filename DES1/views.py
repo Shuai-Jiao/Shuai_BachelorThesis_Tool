@@ -725,21 +725,21 @@ def changeptree(request):
     k = 0
     for i,ele in enumerate(ptree):
         if i < k:
-            print(i,k,"ik")
+            #print(i,k,"ik")
             continue
 
         if ele == "'":
-            print("left")
+            #print("left")
 
             for j,ele in enumerate(ptree[i+1:]):
-                print(ele,"ele")
+                #print(ele,"ele")
                 if ele == "'":
-                    print("right")
+                    #print("right")
                     k = i+j+2
-                    print(k,ptree[k],"line49")
+                    #print(k,ptree[k],"line49")
                     break
                 if ele == " ":
-                    print("space")
+                    #print("space")
                     b = list(ptree)
                     b[i+j+1] = '$'
                     ptree = ''.join(b)
