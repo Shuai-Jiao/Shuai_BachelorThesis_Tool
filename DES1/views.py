@@ -146,8 +146,10 @@ def result(request):
     logname = request.POST.get('lona')
     logtime = request.POST.get('loti')
     logtran = request.POST.get('lotr')
-    logstart = request.POST.get('stti')
-    logcompl = request.POST.get('coti')
+    #logstart = request.POST.get('stti')
+    logstart = ''
+    #logcompl = request.POST.get('coti')
+    logcompl = ''
     logreso = request.POST.get('lore')
     logid = request.POST.get('loid')
     if logid == '':
@@ -197,6 +199,16 @@ def statics(request):
     duration = Duration
     #deviation = infra.recieve_and_convert_log.get_deviation(duration,log)
     deviation = Deviation
+    actwaittime0 = infra.recieve_and_convert_log.activitywaitingtime(log)
+    actwaittime = []
+    for ele in duration:
+        if ele[0] in actwaittime0.keys():
+            actwaittime.append((ele[0],actwaittime0[ele[0]]))
+        else:
+            actwaittime.append((ele[0],0))
+    print(actwaittime0,actwaittime,'line 207')
+
+
     #waitingtime = infra.recieve_and_convert_log.waitingtime(log)
     waitingtime = Waitingtime
     #frequency = infra.recieve_and_convert_log.get_waitinhour(log,Waitingtime,'n',Watichange)
@@ -250,14 +262,14 @@ def statics(request):
 
 
     for i,x in enumerate(duration):
-        duration[i]=(x[0],round(x[1],2),round(deviation[i][1],2))
+        duration[i]=(x[0],round(x[1],2),round(actwaittime[i][1],2),round(deviation[i][1],2))
     for i,x in enumerate(deviation):
         deviation[i]=(x[0],round(x[1],2))
     context = {'log':log,'ptree':ptree,'duration':duration,'deviation':deviation,\
     'worked_time':worked_time,'numtrace':numtrace,'numactivity':numactivity,'activitylist':activitylist,\
     'timeinterval':timeinterval,'meanthoughputtime':meanthoughputtime,\
     'deviationthoughputtime':deviationthoughputtime,'arrivalratio':arrivalratio,\
-    'dispersionratio':dispersionratio,'resourcedict':Actresource,'handover':handover,"initialcaplim":initialcaplim,'initialtrace':initialtrace}
+    'dispersionratio':dispersionratio,'resourcedict':Actresource,'handover':handover,"initialcaplim":initialcaplim,'initialtrace':initialtrace,'actwaittime':actwaittime}
     return render(request,'statics.html',context)
 
 def simulation(request):

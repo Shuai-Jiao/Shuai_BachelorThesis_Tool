@@ -63,7 +63,7 @@ def generate_log(pt0,freqtrace, evaluatetreelist, loopdict0, no_traces=100):
     curr_timestamp = 10000000
     itrace = 0
     while itrace < no_traces:
-        print(itrace,'line 66')
+        #print(itrace,'line 66')
         '''
         loopdict = deepcopy(loopdict0)
         for key,value in loopdict.items():

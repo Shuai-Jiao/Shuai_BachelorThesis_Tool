@@ -74,13 +74,14 @@ class recieve_and_convert_log:
         self.logname = "concept:name"
         self.logtime = "time:timestamp"
         self.logtransi = "lifecycle:transition"
-        self.logstti = "time:timestamp"
-        self.logcoti = "time:timestamp"
+        self.logstti = "lifecycle:transition"
+        self.logcoti = "lifecycle:transition"
         self.logreso = "org:resource"
         self.logid = "concept:name"
         self.treeevaluation = None
         self.loopdict = None
         self.adr = None
+        self.actwaitdict = {}
 
     @classmethod
     def convert_log(self,adr,lona,loti,lotr,lost,loco,lore,loid,xorc):
@@ -296,7 +297,7 @@ class recieve_and_convert_log:
 
 
 
-
+        
         if limittime == '':
             timeinterval = self.statics(log)[3]
             fmt = '%Y-%m-%d %H:%M:%S'
@@ -377,6 +378,7 @@ class recieve_and_convert_log:
         '''inf'''
         '''
 
+
         if limittime == '':
             #limittime = self.initiallimit(log)[1]
             limittime = float('inf')
@@ -441,6 +443,7 @@ class recieve_and_convert_log:
                        activitiescapacity1.append(float("inf"))
                    else:
                        activitiescapacity1.append(int(ele[1]))
+
 
         '''
         '''inf'''
@@ -561,7 +564,7 @@ class recieve_and_convert_log:
             numtrace = 100
         actdict = self.decisionpoint(Log)[1]
 
-
+        self.actwaitdict = self.activitywaitingtime(Log)
         #print(tree.operator,tree,"infra line 405")
         resourceornot = 0
         if converttree == 0:
@@ -652,7 +655,7 @@ class recieve_and_convert_log:
         #env1 = simpy.Environment()
         #process.setup(env,starttime,tracesList,duration,waitingtime,self.frequency_list,self.activity_deviation,info)
         #env.process(process.setup(env,csv_writer,startID,starttime,tracesList,duration,waitingtime,self.frequency_list,self.activity_deviation,info))
-        env.process(process.setup(env,csv_writer,startID,starttime,tracesList,duration,waitingtime,arrivallist,deviation,info,arradeviainday,simres))
+        env.process(process.setup(env,csv_writer,startID,starttime,tracesList,duration,waitingtime,arrivallist,deviation,info,arradeviainday,simres,self.actwaitdict))
         #print(waitingtime,self.frequency_list)
         #simtime = input('Please enter the simulation time in minutes:')
         #if simtime == '':
@@ -879,6 +882,63 @@ class recieve_and_convert_log:
                    loglist[i] = trace
             '''
         return (patternlist,freqdict)
+
+    @classmethod
+    def activitywaitingtime(self,log):
+        startacttimedict = {}
+        startactcountdict = {}
+        completeacttimedict = {}
+        completeactcountdict = {}
+        waittimedict = {}
+        for trace in log:
+            for i,event in enumerate(trace):
+                if event[self.logtransi] == "START" or event[self.logtransi] == "start":
+                    if not event[self.logname] in startacttimedict:
+                        startacttimedict[event[self.logname]] = [str(event[self.logtime])]
+                    else:
+                        startacttimedict[event[self.logname]].append(str(event[self.logtime]))
+                    j = i
+                    while j < len(trace)-2:
+
+                        if trace[j][self.logname] == event[self.logname] and (trace[j][self.logtransi] == "COMPLETE"\
+                        or trace[j][self.logtransi] == "complete"):
+                           if not event[self.logname] in completeacttimedict:
+                               completeacttimedict[event[self.logname]] = [str(trace[j+1][self.logtime])]
+                           else:
+                               completeacttimedict[event[self.logname]].append(str(trace[j+1][self.logtime]))
+
+                           break
+                        j += 1
+
+
+
+                '''
+                if event[self.logtransi] == "COMPLETE" or event[self.logtransi] == "complete":
+                    if not event[self.logname] in completeacttimedict:
+                       completeacttimedict[event[self.logname]] = [str(event[self.logtime])]
+                    else:
+                       completeacttimedict[event[self.logname]].append(str(event[self.logtime]))
+                '''
+
+        for key in startacttimedict.keys():
+            count = 0
+            timesum = 0
+            if not key in completeacttimedict.keys():
+                waittimedict[key] = 0
+            else:
+                for i in range(len(startacttimedict[key])-1):
+                  start = startacttimedict[key][i][0:19]
+                  end = completeacttimedict[key][i][0:19]
+                  fmt = '%Y-%m-%d %H:%M:%S'
+                  duration = dt.datetime.strptime(end,fmt)-dt.datetime.strptime(start,fmt)
+                  timesum += int(duration.total_seconds())
+                  count += 1
+                waittimedict[key] = timesum/count
+        self.actwaitdict = waittimedict
+        return waittimedict
+
+
+
 
 
 
