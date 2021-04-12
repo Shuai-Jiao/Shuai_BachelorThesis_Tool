@@ -4,7 +4,7 @@ from pm4py.visualization.process_tree import visualizer as pt_visualizer
 
 from pm4py.util.business_hours import BusinessHours
 from datetime import datetime
-
+import math
 import os
 from pm4py.objects.log.importer.xes import importer as xes_importer
 from pm4py.util import constants
@@ -146,26 +146,28 @@ def result(request):
     logname = request.POST.get('lona')
     logtime = request.POST.get('loti')
     logtran = request.POST.get('lotr')
-    #logstart = request.POST.get('stti')
-    logstart = ''
-    #logcompl = request.POST.get('coti')
-    logcompl = ''
+    logstart = request.POST.get('stti')
+    #logstart = ''
+    logcompl = request.POST.get('coti')
+    #logcompl = ''
     logreso = request.POST.get('lore')
     logid = request.POST.get('loid')
     if logid == '':
-        logid = "concept:name"
+        logid = "EventID"
     if logname == '':
         logname = "concept:name"
     if logtime == '':
         logtime = "time:timestamp"
+    '''
     if logstart == '':
         logstart = "time:timestamp"
     if logcompl == '':
         logcompl = "time:timestamp"
+    '''
     if logreso == '':
         logreso = "org:resource"
     if logtran == '':
-        logtran = "lifecycle:transition"
+        logtran = "time:timestamp"
     ADRESS = logadr
     #print(inputname[-3:],"inputname[:-3]")
 
@@ -221,13 +223,13 @@ def statics(request):
 
     #log_path = os.path.join("tests","input_data","receipt.xes")
     initialtrace = infra.recieve_and_convert_log.initialtrace(log)
-    x, y = case_statistics.get_kde_caseduration(log, parameters={constants.PARAMETER_CONSTANT_TIMESTAMP_KEY: "time:timestamp"})
+    x, y = case_statistics.get_kde_caseduration(log, parameters={constants.PARAMETER_CONSTANT_TIMESTAMP_KEY: logtime})
     gviz1 = graphs_visualizer.apply_plot(x, y, variant=graphs_visualizer.Variants.CASES)
     gviz2 = graphs_visualizer.apply_semilogx(x, y, variant=graphs_visualizer.Variants.CASES)
     graphs_visualizer.save(gviz1,"DES1/static/image1.gv.png")
     graphs_visualizer.save(gviz2,"DES1/static/image2.gv.png")
 
-    x, y = attributes_filter.get_kde_date_attribute(log, attribute="time:timestamp")
+    x, y = attributes_filter.get_kde_date_attribute(log, attribute=logtime)
     gviz3 = graphs_visualizer.apply_plot(x, y, variant=graphs_visualizer.Variants.DATES)
     graphs_visualizer.save(gviz3,"DES1/static/image3.gv.png")
 
@@ -246,17 +248,34 @@ def statics(request):
     deviationthoughputtime = infra.recieve_and_convert_log.statics(log)[4][1]
     arrivalratio = infra.recieve_and_convert_log.statics(log)[5]
     dispersionratio = infra.recieve_and_convert_log.statics(log)[6]
-    resourcedict = infra.recieve_and_convert_log.initialresource1(log)
+    #resourcedict = infra.recieve_and_convert_log.initialresource1(log)
     initialcapacity = infra.recieve_and_convert_log.computecapacity(log)
     initiallimit = infra.recieve_and_convert_log.initiallimit(log)[0]
     initialcaplim = []
     for i in range(len(initialcapacity)):
         initialcaplim.append((initialcapacity[i][0],initialcapacity[i][1],initiallimit[i][1]))
     #print(intialcapacity,"line 205")
-    Actresource = roles_discovery.apply(log,variant=None, parameters={rpd.Parameters.RESOURCE_KEY:logreso})
+    resincomplete = 0
     list0 = []
+    for trace in log:
+        for event in trace:
+            try:
+                if math.isnan(event[logreso]):
+                    resincomplete = 1
+            except:
+                a = 1
+
+            if event[logreso] == None or event[logreso] == '':
+                resincomplete = 1
+    if resincomplete == 0:
+        Actresource = roles_discovery.apply(log,variant=None, parameters={rpd.Parameters.RESOURCE_KEY:logreso})
+        handover = infra.recieve_and_convert_log.getactivityresourcecount(log,list0,logname,logreso)[1]
+    else:
+        Actresource = {}
+        handover = ({},None)
+
     infra.recieve_and_convert_log.notdoact(ptree,list0)
-    handover = infra.recieve_and_convert_log.getactivityresourcecount(log,list0,logname,logreso)[1]
+
 
 
 

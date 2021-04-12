@@ -116,7 +116,7 @@ class recieve_and_convert_log:
               #print(log_csv['time:timestamp'],'loti is line 107')
               #log_csv[loti] = log_csv[loti].replace('/','-')
               log_csv = dataframe_utils.convert_timestamp_columns_in_df(log_csv)
-              log_csv = log_csv.sort_values(loti)
+              #log_csv = log_csv.sort_values(loti)
               log = log_converter.apply(log_csv)
           except:
               log_csv = pd.read_csv(adr+'.csv', sep=';', encoding='utf-8')
@@ -155,7 +155,7 @@ class recieve_and_convert_log:
             try:
                 x = caldur.oneortwo(log,self.logtransi)
                 if x == 2:
-                    duration = caldur.getaverageduration(log,self.logname,self.logtime,self.logtransi)
+                    duration = caldur.getaverageduration(log,self.logname,self.logtime,self.logtransi,self.logid)
                     print('line 152')
                 if x == 1:
                     duration = caldur.getaverageduration2(log,self.logname,self.logtime)
@@ -164,13 +164,15 @@ class recieve_and_convert_log:
                 duration = caldur.getaverageduration2(log,self.logname,self.logtime)
                 print('line 158')
         else:
-            try:
-              duration = caldur.getaverageduration3(log,self.logname,self.logtime,self.logstti,self.logcoti)
-              print('line 159')
+
+            duration = caldur.getaverageduration3(log,self.logname,self.logtime,self.logstti,self.logcoti)
+            print('line 159')
+            '''
             except:
               self.logtime = self.logcoti
               print('line 161')
               duration = caldur.getaverageduration2(log,self.logname,self.logtime)
+            '''
         activities = attributes_filter.get_attribute_values(log, self.logname)
         activitiesList=[]
         for trace in activities:
@@ -297,7 +299,7 @@ class recieve_and_convert_log:
 
 
 
-        
+
         if limittime == '':
             timeinterval = self.statics(log)[3]
             fmt = '%Y-%m-%d %H:%M:%S'
@@ -376,9 +378,9 @@ class recieve_and_convert_log:
 
 
         '''inf'''
+
+
         '''
-
-
         if limittime == '':
             #limittime = self.initiallimit(log)[1]
             limittime = float('inf')
@@ -885,56 +887,62 @@ class recieve_and_convert_log:
 
     @classmethod
     def activitywaitingtime(self,log):
-        startacttimedict = {}
-        startactcountdict = {}
-        completeacttimedict = {}
-        completeactcountdict = {}
-        waittimedict = {}
-        for trace in log:
-            for i,event in enumerate(trace):
-                if event[self.logtransi] == "START" or event[self.logtransi] == "start":
-                    if not event[self.logname] in startacttimedict:
-                        startacttimedict[event[self.logname]] = [str(event[self.logtime])]
-                    else:
-                        startacttimedict[event[self.logname]].append(str(event[self.logtime]))
-                    j = i
-                    while j < len(trace)-2:
+        if self.logstti == self.logcoti:
+            startacttimedict = {}
+            startactcountdict = {}
+            completeacttimedict = {}
+            completeactcountdict = {}
+            waittimedict = {}
+            for trace in log:
+                for i,event in enumerate(trace):
+                    if event[self.logtransi] == "START" or event[self.logtransi] == "start":
+                        if not event[self.logname] in startacttimedict:
+                            startacttimedict[event[self.logname]] = [str(event[self.logtime])]
+                        else:
+                            startacttimedict[event[self.logname]].append(str(event[self.logtime]))
+                        j = i
+                        while j < len(trace)-2:
 
-                        if trace[j][self.logname] == event[self.logname] and (trace[j][self.logtransi] == "COMPLETE"\
-                        or trace[j][self.logtransi] == "complete"):
-                           if not event[self.logname] in completeacttimedict:
-                               completeacttimedict[event[self.logname]] = [str(trace[j+1][self.logtime])]
-                           else:
-                               completeacttimedict[event[self.logname]].append(str(trace[j+1][self.logtime]))
+                            if trace[j][self.logname] == event[self.logname] and (trace[j][self.logtransi] == "COMPLETE"\
+                            or trace[j][self.logtransi] == "complete"):
+                               if not event[self.logname] in completeacttimedict:
+                                   completeacttimedict[event[self.logname]] = [str(trace[j+1][self.logtime])]
+                               else:
+                                   completeacttimedict[event[self.logname]].append(str(trace[j+1][self.logtime]))
 
-                           break
-                        j += 1
+                               break
+                            j += 1
 
 
 
-                '''
-                if event[self.logtransi] == "COMPLETE" or event[self.logtransi] == "complete":
-                    if not event[self.logname] in completeacttimedict:
-                       completeacttimedict[event[self.logname]] = [str(event[self.logtime])]
-                    else:
-                       completeacttimedict[event[self.logname]].append(str(event[self.logtime]))
-                '''
+                    '''
+                    if event[self.logtransi] == "COMPLETE" or event[self.logtransi] == "complete":
+                        if not event[self.logname] in completeacttimedict:
+                           completeacttimedict[event[self.logname]] = [str(event[self.logtime])]
+                        else:
+                           completeacttimedict[event[self.logname]].append(str(event[self.logtime]))
+                    '''
 
-        for key in startacttimedict.keys():
-            count = 0
-            timesum = 0
-            if not key in completeacttimedict.keys():
-                waittimedict[key] = 0
-            else:
-                for i in range(len(startacttimedict[key])-1):
-                  start = startacttimedict[key][i][0:19]
-                  end = completeacttimedict[key][i][0:19]
-                  fmt = '%Y-%m-%d %H:%M:%S'
-                  duration = dt.datetime.strptime(end,fmt)-dt.datetime.strptime(start,fmt)
-                  timesum += int(duration.total_seconds())
-                  count += 1
-                waittimedict[key] = timesum/count
-        self.actwaitdict = waittimedict
+            for key in startacttimedict.keys():
+                count = 0
+                timesum = 0
+                if not key in completeacttimedict.keys():
+                    waittimedict[key] = 0
+                else:
+                    for i in range(len(startacttimedict[key])-1):
+                      start = startacttimedict[key][i][0:19]
+                      end = completeacttimedict[key][i][0:19]
+                      fmt = '%Y-%m-%d %H:%M:%S'
+                      duration = dt.datetime.strptime(end,fmt)-dt.datetime.strptime(start,fmt)
+                      timesum += int(duration.total_seconds())
+                      count += 1
+                    waittimedict[key] = timesum/count
+            self.actwaitdict = waittimedict
+        else:
+            waittimedict = {}
+            for trace in log:
+                for event in trace:
+                    waittimedict[event[self.logname]] = 0
         return waittimedict
 
 
@@ -1040,7 +1048,7 @@ class recieve_and_convert_log:
             key = 'Class'+str(i)
             resultdict[key]=(ele,actdict1[ele[0]])
             i += 1
-        #print(resultdict)
+        print(resultdict,actdict1,"line 1043")
         return (resultdict,actdict1)
 
     @classmethod
@@ -1258,10 +1266,23 @@ class recieve_and_convert_log:
 
     @classmethod
     def getactivityresourcecount(self,log,notdo,nameattri,resattri):
+        resincomplete = 0
+        '''
+        for trace in log:
+            for event in trace:
+                if event[resattri] == '' or math.isnan(event[i][resattri]):
+                    resincomplete = 1
+                    print('line 1266')
+                    break
+        if resincomplete == 1:
+            print('line 1269')
+            return ({},([],[]))
+        '''
 
         actrescount = {}
         for trace in log:
             for i in range(len(trace)-1):
+
                 if self.do(trace[i][nameattri],trace[i+1][nameattri],notdo):
                     if (trace[i][resattri],trace[i+1][resattri]) in actrescount.keys():
                         actrescount[(trace[i][resattri],trace[i+1][resattri])] += 1
