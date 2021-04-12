@@ -1,0 +1,697 @@
+case:concept:name,concept:name,org:resource,time:timestamp,lifecycle:transition
+0,register request,Pete,2021-01-01 00:00:00,COMPLETE
+1,register request,Pete,2021-01-01 03:00:15,COMPLETE
+2,register request,Ellen,2021-01-01 05:59:10,COMPLETE
+3,register request,Pete,2021-01-01 09:01:41,COMPLETE
+0,examine casually,Sue,2021-01-01 11:38:21,COMPLETE
+4,register request,Ellen,2021-01-01 11:59:23,COMPLETE
+5,register request,Mike,2021-01-01 14:55:31,COMPLETE
+1,check ticket,Mike,2021-01-01 15:55:44,COMPLETE
+6,register request,Pete,2021-01-01 17:56:16,COMPLETE
+2,examine thoroughly,Sean,2021-01-01 18:07:38,COMPLETE
+3,examine casually,Sue,2021-01-01 19:19:43,COMPLETE
+7,register request,Mike,2021-01-01 20:57:10,COMPLETE
+8,register request,Pete,2021-01-01 23:55:54,COMPLETE
+4,examine casually,Mike,2021-01-02 00:09:32,COMPLETE
+9,register request,Mike,2021-01-02 02:54:47,COMPLETE
+5,check ticket,Ellen,2021-01-02 02:56:32,COMPLETE
+6,check ticket,Mike,2021-01-02 05:34:22,COMPLETE
+10,register request,Pete,2021-01-02 05:54:29,COMPLETE
+11,register request,Pete,2021-01-02 08:54:42,COMPLETE
+7,examine thoroughly,Sean,2021-01-02 09:38:01,COMPLETE
+12,register request,Pete,2021-01-02 11:53:43,COMPLETE
+8,check ticket,Mike,2021-01-02 12:29:37,COMPLETE
+9,check ticket,Mike,2021-01-02 12:58:06,COMPLETE
+13,register request,Pete,2021-01-02 14:53:10,COMPLETE
+14,register request,Pete,2021-01-02 17:55:50,COMPLETE
+10,check ticket,Mike,2021-01-02 18:39:56,COMPLETE
+11,check ticket,Mike,2021-01-02 20:08:26,COMPLETE
+15,register request,Pete,2021-01-02 20:55:14,COMPLETE
+16,register request,Pete,2021-01-02 23:56:00,COMPLETE
+12,examine casually,Mike,2021-01-03 00:54:45,COMPLETE
+13,check ticket,Mike,2021-01-03 02:12:12,COMPLETE
+17,register request,Mike,2021-01-03 02:55:18,COMPLETE
+18,register request,Mike,2021-01-03 05:54:50,COMPLETE
+14,examine thoroughly,Sue,2021-01-03 06:49:38,COMPLETE
+19,register request,Pete,2021-01-03 08:53:38,COMPLETE
+0,check ticket,Pete,2021-01-03 09:20:38,COMPLETE
+15,examine casually,Mike,2021-01-03 10:38:56,COMPLETE
+16,examine casually,Mike,2021-01-03 11:12:18,COMPLETE
+20,register request,Mike,2021-01-03 11:53:26,COMPLETE
+1,examine casually,Sean,2021-01-03 14:45:01,COMPLETE
+21,register request,Pete,2021-01-03 14:53:51,COMPLETE
+17,check ticket,Mike,2021-01-03 15:20:45,COMPLETE
+4,check ticket,Mike,2021-01-03 17:21:26,COMPLETE
+22,register request,Pete,2021-01-03 17:52:42,COMPLETE
+19,check ticket,Mike,2021-01-03 19:40:09,COMPLETE
+18,examine casually,Ellen,2021-01-03 19:47:14,COMPLETE
+23,register request,Ellen,2021-01-03 20:51:06,COMPLETE
+3,check ticket,Mike,2021-01-03 22:48:31,COMPLETE
+6,examine casually,Sean,2021-01-03 23:46:09,COMPLETE
+20,check ticket,Ellen,2021-01-03 23:47:59,COMPLETE
+24,register request,Mike,2021-01-03 23:51:10,COMPLETE
+25,register request,Pete,2021-01-04 02:51:05,COMPLETE
+5,examine thoroughly,Sean,2021-01-04 03:01:41,COMPLETE
+21,examine casually,Mike,2021-01-04 03:24:16,COMPLETE
+22,examine thoroughly,Sue,2021-01-04 04:33:07,COMPLETE
+26,register request,Mike,2021-01-04 05:52:09,COMPLETE
+23,check ticket,Mike,2021-01-04 08:23:38,COMPLETE
+27,register request,Pete,2021-01-04 08:53:07,COMPLETE
+9,examine casually,Mike,2021-01-04 08:55:20,COMPLETE
+8,examine casually,Ellen,2021-01-04 11:45:38,COMPLETE
+28,register request,Ellen,2021-01-04 11:52:29,COMPLETE
+10,examine casually,Mike,2021-01-04 13:42:45,COMPLETE
+24,examine casually,Mike,2021-01-04 13:45:19,COMPLETE
+29,register request,Pete,2021-01-04 14:51:41,COMPLETE
+26,examine thoroughly,Sean,2021-01-04 15:16:13,COMPLETE
+2,check ticket,Pete,2021-01-04 16:31:56,COMPLETE
+25,check ticket,Mike,2021-01-04 16:41:54,COMPLETE
+30,register request,Pete,2021-01-04 17:50:48,COMPLETE
+11,examine casually,Sean,2021-01-04 19:58:29,COMPLETE
+31,register request,Ellen,2021-01-04 20:47:20,COMPLETE
+12,check ticket,Mike,2021-01-04 21:32:44,COMPLETE
+13,examine casually,Ellen,2021-01-04 22:32:07,COMPLETE
+27,examine casually,Mike,2021-01-04 23:12:29,COMPLETE
+32,register request,Pete,2021-01-04 23:48:19,COMPLETE
+28,examine casually,Mike,2021-01-05 01:23:36,COMPLETE
+29,check ticket,Mike,2021-01-05 02:40:29,COMPLETE
+33,register request,Ellen,2021-01-05 02:49:29,COMPLETE
+15,check ticket,Ellen,2021-01-05 03:48:24,COMPLETE
+30,check ticket,Mike,2021-01-05 05:15:56,COMPLETE
+34,register request,Ellen,2021-01-05 05:49:58,COMPLETE
+7,check ticket,Pete,2021-01-05 05:52:38,COMPLETE
+0,decide,Sara,2021-01-05 06:07:51,COMPLETE
+35,register request,Ellen,2021-01-05 08:46:49,COMPLETE
+16,check ticket,Pete,2021-01-05 08:56:08,COMPLETE
+31,examine casually,Mike,2021-01-05 10:27:06,COMPLETE
+17,examine thoroughly,Sean,2021-01-05 10:40:21,COMPLETE
+4,decide,Sara,2021-01-05 10:43:04,COMPLETE
+3,decide,Sara,2021-01-05 11:44:16,COMPLETE
+36,register request,Pete,2021-01-05 11:44:47,COMPLETE
+32,check ticket,Mike,2021-01-05 12:56:50,COMPLETE
+33,examine casually,Mike,2021-01-05 13:07:39,COMPLETE
+37,register request,Mike,2021-01-05 14:42:32,COMPLETE
+20,examine casually,Mike,2021-01-05 14:55:33,COMPLETE
+34,check ticket,Mike,2021-01-05 15:33:01,COMPLETE
+38,register request,Mike,2021-01-05 17:43:27,COMPLETE
+6,decide,Sara,2021-01-05 19:02:12,COMPLETE
+1,decide,Sara,2021-01-05 19:43:22,COMPLETE
+18,check ticket,Mike,2021-01-05 20:16:28,COMPLETE
+39,register request,Mike,2021-01-05 20:44:31,COMPLETE
+36,examine casually,Mike,2021-01-05 21:05:45,COMPLETE
+19,examine casually,Sean,2021-01-05 21:20:49,COMPLETE
+35,examine casually,Mike,2021-01-05 21:35:23,COMPLETE
+40,register request,Ellen,2021-01-05 23:47:39,COMPLETE
+14,check ticket,Mike,2021-01-06 00:15:03,COMPLETE
+21,check ticket,Ellen,2021-01-06 00:21:09,COMPLETE
+37,check ticket,Pete,2021-01-06 02:34:43,COMPLETE
+41,register request,Ellen,2021-01-06 02:48:49,COMPLETE
+2,decide,Sara,2021-01-06 03:34:35,COMPLETE
+38,examine thoroughly,Sean,2021-01-06 04:15:38,COMPLETE
+42,register request,Ellen,2021-01-06 05:50:47,COMPLETE
+25,examine casually,Mike,2021-01-06 06:34:39,COMPLETE
+23,examine thoroughly,Sean,2021-01-06 07:07:24,COMPLETE
+10,decide,Sara,2021-01-06 07:25:40,COMPLETE
+43,register request,Mike,2021-01-06 08:51:35,COMPLETE
+9,decide,Sara,2021-01-06 09:11:39,COMPLETE
+39,examine casually,Sean,2021-01-06 09:24:18,COMPLETE
+24,check ticket,Ellen,2021-01-06 10:03:42,COMPLETE
+12,decide,Sara,2021-01-06 10:06:55,COMPLETE
+8,decide,Sara,2021-01-06 11:27:18,COMPLETE
+44,register request,Ellen,2021-01-06 11:52:15,COMPLETE
+40,examine casually,Mike,2021-01-06 13:41:09,COMPLETE
+41,check ticket,Mike,2021-01-06 14:46:45,COMPLETE
+45,register request,Pete,2021-01-06 14:52:30,COMPLETE
+42,examine casually,Mike,2021-01-06 16:52:52,COMPLETE
+29,examine thoroughly,Sean,2021-01-06 16:59:43,COMPLETE
+27,check ticket,Ellen,2021-01-06 17:13:54,COMPLETE
+46,register request,Mike,2021-01-06 17:50:48,COMPLETE
+5,decide,Sara,2021-01-06 18:01:23,COMPLETE
+22,check ticket,Pete,2021-01-06 18:14:28,COMPLETE
+28,check ticket,Mike,2021-01-06 18:54:52,COMPLETE
+43,check ticket,Mike,2021-01-06 19:46:37,COMPLETE
+11,decide,Sara,2021-01-06 19:53:12,COMPLETE
+47,register request,Pete,2021-01-06 20:52:51,COMPLETE
+15,decide,Sara,2021-01-06 22:52:39,COMPLETE
+7,decide,Sara,2021-01-06 23:15:06,COMPLETE
+48,register request,Mike,2021-01-06 23:50:03,COMPLETE
+44,examine casually,Mike,2021-01-07 01:02:18,COMPLETE
+30,examine thoroughly,Sean,2021-01-07 01:49:50,COMPLETE
+45,check ticket,Mike,2021-01-07 02:28:22,COMPLETE
+13,decide,Sara,2021-01-07 02:47:18,COMPLETE
+49,register request,Ellen,2021-01-07 02:53:13,COMPLETE
+31,check ticket,Pete,2021-01-07 03:45:13,COMPLETE
+33,check ticket,Pete,2021-01-07 04:24:24,COMPLETE
+46,examine thoroughly,Sean,2021-01-07 04:49:17,COMPLETE
+50,register request,Mike,2021-01-07 05:53:09,COMPLETE
+26,check ticket,Pete,2021-01-07 08:26:36,COMPLETE
+47,examine casually,Mike,2021-01-07 08:44:32,COMPLETE
+16,decide,Sara,2021-01-07 08:44:56,COMPLETE
+51,register request,Pete,2021-01-07 08:51:38,COMPLETE
+32,examine thoroughly,Sean,2021-01-07 11:37:02,COMPLETE
+52,register request,Pete,2021-01-07 11:48:30,COMPLETE
+35,check ticket,Pete,2021-01-07 12:11:44,COMPLETE
+48,examine casually,Sean,2021-01-07 13:06:03,COMPLETE
+49,check ticket,Mike,2021-01-07 13:42:26,COMPLETE
+18,decide,Sara,2021-01-07 13:53:17,COMPLETE
+14,decide,Sara,2021-01-07 14:12:02,COMPLETE
+50,examine thoroughly,Sean,2021-01-07 14:15:57,COMPLETE
+20,decide,Sara,2021-01-07 14:36:35,COMPLETE
+37,examine casually,Mike,2021-01-07 14:39:51,COMPLETE
+53,register request,Mike,2021-01-07 14:49:12,COMPLETE
+36,check ticket,Ellen,2021-01-07 15:20:45,COMPLETE
+19,decide,Sara,2021-01-07 16:04:36,COMPLETE
+54,register request,Ellen,2021-01-07 17:48:47,COMPLETE
+51,examine casually,Mike,2021-01-07 18:54:39,COMPLETE
+34,examine casually,Ellen,2021-01-07 20:23:00,COMPLETE
+55,register request,Ellen,2021-01-07 20:47:12,COMPLETE
+52,examine casually,Mike,2021-01-07 22:41:34,COMPLETE
+56,register request,Pete,2021-01-07 23:47:57,COMPLETE
+17,decide,Sara,2021-01-08 01:28:59,COMPLETE
+24,decide,Sara,2021-01-08 02:31:23,COMPLETE
+53,check ticket,Pete,2021-01-08 02:33:31,COMPLETE
+57,register request,Pete,2021-01-08 02:46:47,COMPLETE
+41,examine thoroughly,Sean,2021-01-08 02:56:03,COMPLETE
+39,check ticket,Pete,2021-01-08 03:58:56,COMPLETE
+1,pay compensation,Ellen,2021-01-08 04:38:42,COMPLETE
+58,register request,Ellen,2021-01-08 05:51:03,COMPLETE
+40,check ticket,Mike,2021-01-08 06:08:23,COMPLETE
+21,decide,Sara,2021-01-08 07:08:52,COMPLETE
+54,examine casually,Mike,2021-01-08 07:15:32,COMPLETE
+43,examine casually,Mike,2021-01-08 08:00:33,COMPLETE
+9,pay compensation,Ellen,2021-01-08 08:37:50,COMPLETE
+42,check ticket,Ellen,2021-01-08 08:45:05,COMPLETE
+59,register request,Mike,2021-01-08 08:47:50,COMPLETE
+55,examine casually,Mike,2021-01-08 09:33:05,COMPLETE
+27,decide,Sara,2021-01-08 10:40:34,COMPLETE
+3,pay compensation,Ellen,2021-01-08 11:36:43,COMPLETE
+60,register request,Mike,2021-01-08 11:44:55,COMPLETE
+56,check ticket,Mike,2021-01-08 12:44:42,COMPLETE
+4,reinitiate request,Sara,2021-01-08 12:53:59,COMPLETE
+45,examine thoroughly,Sean,2021-01-08 13:00:00,COMPLETE
+6,reinitiate request,Sara,2021-01-08 13:15:07,COMPLETE
+25,decide,Sara,2021-01-08 14:02:20,COMPLETE
+61,register request,Pete,2021-01-08 14:45:07,COMPLETE
+22,decide,Sara,2021-01-08 15:20:57,COMPLETE
+57,examine casually,Sue,2021-01-08 15:36:50,COMPLETE
+2,reject request,Ellen,2021-01-08 15:51:16,COMPLETE
+0,reinitiate request,Sara,2021-01-08 16:03:05,COMPLETE
+58,examine casually,Mike,2021-01-08 17:12:35,COMPLETE
+62,register request,Pete,2021-01-08 17:43:15,COMPLETE
+59,check ticket,Pete,2021-01-08 19:24:04,COMPLETE
+28,decide,Sara,2021-01-08 20:04:42,COMPLETE
+23,decide,Sara,2021-01-08 20:10:28,COMPLETE
+63,register request,Mike,2021-01-08 20:44:14,COMPLETE
+33,decide,Sara,2021-01-08 20:47:23,COMPLETE
+44,check ticket,Ellen,2021-01-08 21:11:44,COMPLETE
+38,check ticket,Pete,2021-01-08 21:16:10,COMPLETE
+64,register request,Mike,2021-01-08 23:43:26,COMPLETE
+8,reinitiate request,Sara,2021-01-09 00:11:14,COMPLETE
+31,decide,Sara,2021-01-09 00:26:32,COMPLETE
+60,examine casually,Ellen,2021-01-09 01:41:45,COMPLETE
+12,reinitiate request,Sara,2021-01-09 01:52:22,COMPLETE
+26,decide,Sara,2021-01-09 02:27:00,COMPLETE
+65,register request,Mike,2021-01-09 02:45:37,COMPLETE
+35,decide,Sara,2021-01-09 02:49:01,COMPLETE
+61,check ticket,Mike,2021-01-09 02:52:25,COMPLETE
+62,examine thoroughly,Sue,2021-01-09 04:42:06,COMPLETE
+37,decide,Sara,2021-01-09 04:52:15,COMPLETE
+66,register request,Ellen,2021-01-09 05:46:53,COMPLETE
+10,reinitiate request,Sara,2021-01-09 07:39:43,COMPLETE
+67,register request,Pete,2021-01-09 08:47:53,COMPLETE
+63,examine casually,Ellen,2021-01-09 09:26:47,COMPLETE
+51,check ticket,Ellen,2021-01-09 10:31:53,COMPLETE
+47,check ticket,Pete,2021-01-09 10:36:32,COMPLETE
+29,decide,Sara,2021-01-09 11:00:41,COMPLETE
+64,examine casually,Sean,2021-01-09 11:37:17,COMPLETE
+68,register request,Mike,2021-01-09 11:49:04,COMPLETE
+48,check ticket,Pete,2021-01-09 12:40:24,COMPLETE
+49,examine casually,Sean,2021-01-09 13:28:41,COMPLETE
+36,decide,Sara,2021-01-09 13:44:03,COMPLETE
+5,reject request,Ellen,2021-01-09 13:53:01,COMPLETE
+65,check ticket,Ellen,2021-01-09 13:59:09,COMPLETE
+46,check ticket,Pete,2021-01-09 14:39:41,COMPLETE
+69,register request,Ellen,2021-01-09 14:50:15,COMPLETE
+30,decide,Sara,2021-01-09 15:40:22,COMPLETE
+15,pay compensation,Ellen,2021-01-09 16:37:17,COMPLETE
+0,examine thoroughly,Sean,2021-01-09 17:22:19,COMPLETE
+66,check ticket,Mike,2021-01-09 17:36:15,COMPLETE
+70,register request,Mike,2021-01-09 17:49:18,COMPLETE
+53,examine thoroughly,Sue,2021-01-09 18:20:20,COMPLETE
+4,check ticket,Ellen,2021-01-09 18:28:02,COMPLETE
+34,decide,Sara,2021-01-09 19:52:45,COMPLETE
+6,check ticket,Ellen,2021-01-09 20:31:14,COMPLETE
+71,register request,Pete,2021-01-09 20:51:37,COMPLETE
+67,check ticket,Mike,2021-01-09 21:03:06,COMPLETE
+7,reinitiate request,Sara,2021-01-09 21:32:11,COMPLETE
+11,pay compensation,Ellen,2021-01-09 21:38:22,COMPLETE
+32,decide,Sara,2021-01-09 23:39:35,COMPLETE
+72,register request,Ellen,2021-01-09 23:53:58,COMPLETE
+68,examine casually,Ellen,2021-01-09 23:59:23,COMPLETE
+40,decide,Sara,2021-01-10 00:25:21,COMPLETE
+39,decide,Sara,2021-01-10 00:37:23,COMPLETE
+52,check ticket,Ellen,2021-01-10 02:19:01,COMPLETE
+43,decide,Sara,2021-01-10 02:36:40,COMPLETE
+73,register request,Mike,2021-01-10 02:52:21,COMPLETE
+56,examine thoroughly,Sean,2021-01-10 02:55:30,COMPLETE
+69,check ticket,Mike,2021-01-10 03:03:25,COMPLETE
+54,check ticket,Ellen,2021-01-10 05:05:43,COMPLETE
+50,check ticket,Pete,2021-01-10 05:15:11,COMPLETE
+74,register request,Pete,2021-01-10 05:53:22,COMPLETE
+42,decide,Sara,2021-01-10 06:25:05,COMPLETE
+70,examine casually,Ellen,2021-01-10 06:40:12,COMPLETE
+18,pay compensation,Mike,2021-01-10 07:13:49,COMPLETE
+71,examine casually,Sue,2021-01-10 07:44:09,COMPLETE
+16,reinitiate request,Sara,2021-01-10 08:03:44,COMPLETE
+75,register request,Pete,2021-01-10 08:52:16,COMPLETE
+12,examine thoroughly,Sue,2021-01-10 09:10:26,COMPLETE
+57,check ticket,Pete,2021-01-10 09:30:41,COMPLETE
+13,pay compensation,Ellen,2021-01-10 10:09:41,COMPLETE
+44,decide,Sara,2021-01-10 10:15:39,COMPLETE
+20,reinitiate request,Sara,2021-01-10 10:25:13,COMPLETE
+55,check ticket,Ellen,2021-01-10 10:27:36,COMPLETE
+19,reinitiate request,Sara,2021-01-10 10:59:15,COMPLETE
+8,check ticket,Mike,2021-01-10 11:00:50,COMPLETE
+72,examine casually,Mike,2021-01-10 11:29:59,COMPLETE
+38,decide,Sara,2021-01-10 11:52:05,COMPLETE
+76,register request,Pete,2021-01-10 11:54:32,COMPLETE
+41,decide,Sara,2021-01-10 12:07:22,COMPLETE
+14,reject request,Mike,2021-01-10 13:25:29,COMPLETE
+61,examine casually,Mike,2021-01-10 13:56:16,COMPLETE
+77,register request,Mike,2021-01-10 14:53:00,COMPLETE
+10,check ticket,Ellen,2021-01-10 15:01:21,COMPLETE
+73,check ticket,Pete,2021-01-10 15:58:44,COMPLETE
+59,examine casually,Sue,2021-01-10 16:12:49,COMPLETE
+74,examine thoroughly,Sue,2021-01-10 17:21:22,COMPLETE
+24,reinitiate request,Sara,2021-01-10 17:46:39,COMPLETE
+78,register request,Pete,2021-01-10 17:55:02,COMPLETE
+79,register request,Pete,2021-01-10 20:53:53,COMPLETE
+58,check ticket,Ellen,2021-01-10 21:39:44,COMPLETE
+75,examine casually,Mike,2021-01-10 22:17:26,COMPLETE
+60,check ticket,Mike,2021-01-10 22:29:55,COMPLETE
+64,check ticket,Pete,2021-01-10 22:35:44,COMPLETE
+76,examine casually,Mike,2021-01-10 23:01:17,COMPLETE
+80,register request,Mike,2021-01-10 23:54:04,COMPLETE
+17,reject request,Mike,2021-01-11 01:02:43,COMPLETE
+77,check ticket,Ellen,2021-01-11 02:28:50,COMPLETE
+81,register request,Mike,2021-01-11 02:56:00,COMPLETE
+49,decide,Sara,2021-01-11 04:23:06,COMPLETE
+46,decide,Sara,2021-01-11 04:32:48,COMPLETE
+7,examine casually,Sue,2021-01-11 04:57:40,COMPLETE
+22,reinitiate request,Sara,2021-01-11 05:15:12,COMPLETE
+78,check ticket,Mike,2021-01-11 05:16:13,COMPLETE
+82,register request,Mike,2021-01-11 05:57:28,COMPLETE
+23,reinitiate request,Sara,2021-01-11 06:19:45,COMPLETE
+48,decide,Sara,2021-01-11 07:49:55,COMPLETE
+45,decide,Sara,2021-01-11 07:52:34,COMPLETE
+47,decide,Sara,2021-01-11 08:06:26,COMPLETE
+83,register request,Ellen,2021-01-11 08:56:41,COMPLETE
+27,pay compensation,Ellen,2021-01-11 09:24:10,COMPLETE
+65,examine thoroughly,Sean,2021-01-11 09:24:43,COMPLETE
+79,check ticket,Mike,2021-01-11 10:28:39,COMPLETE
+80,examine casually,Ellen,2021-01-11 11:22:43,COMPLETE
+84,register request,Mike,2021-01-11 11:57:43,COMPLETE
+28,reinitiate request,Sara,2021-01-11 12:55:38,COMPLETE
+63,check ticket,Mike,2021-01-11 13:07:51,COMPLETE
+6,examine casually,Mike,2021-01-11 13:19:43,COMPLETE
+35,reject request,Pete,2021-01-11 14:02:38,COMPLETE
+51,decide,Sara,2021-01-11 14:26:49,COMPLETE
+85,register request,Ellen,2021-01-11 14:53:33,COMPLETE
+81,check ticket,Mike,2021-01-11 15:07:25,COMPLETE
+69,examine casually,Sean,2021-01-11 15:09:41,COMPLETE
+21,reinitiate request,Sara,2021-01-11 16:44:17,COMPLETE
+66,examine casually,Ellen,2021-01-11 17:18:51,COMPLETE
+20,examine thoroughly,Sean,2021-01-11 17:33:03,COMPLETE
+16,check ticket,Ellen,2021-01-11 17:34:16,COMPLETE
+67,examine casually,Ellen,2021-01-11 17:53:52,COMPLETE
+86,register request,Pete,2021-01-11 17:54:49,COMPLETE
+29,reject request,Ellen,2021-01-11 17:54:58,COMPLETE
+82,examine thoroughly,Sean,2021-01-11 18:21:39,COMPLETE
+25,pay compensation,Ellen,2021-01-11 18:38:10,COMPLETE
+4,examine casually,Mike,2021-01-11 19:56:43,COMPLETE
+19,examine thoroughly,Sean,2021-01-11 20:37:06,COMPLETE
+70,check ticket,Mike,2021-01-11 20:44:58,COMPLETE
+87,register request,Pete,2021-01-11 20:54:54,COMPLETE
+83,check ticket,Mike,2021-01-11 21:09:24,COMPLETE
+50,decide,Sara,2021-01-11 21:14:43,COMPLETE
+52,decide,Sara,2021-01-11 22:23:04,COMPLETE
+68,check ticket,Mike,2021-01-11 23:52:47,COMPLETE
+88,register request,Mike,2021-01-11 23:56:46,COMPLETE
+84,examine casually,Ellen,2021-01-12 00:30:19,COMPLETE
+54,decide,Sara,2021-01-12 00:39:07,COMPLETE
+31,reinitiate request,Sara,2021-01-12 01:12:47,COMPLETE
+24,examine thoroughly,Sean,2021-01-12 02:16:51,COMPLETE
+62,check ticket,Pete,2021-01-12 02:30:21,COMPLETE
+72,check ticket,Pete,2021-01-12 02:45:22,COMPLETE
+89,register request,Pete,2021-01-12 02:56:40,COMPLETE
+85,check ticket,Mike,2021-01-12 03:26:21,COMPLETE
+57,decide,Sara,2021-01-12 04:27:23,COMPLETE
+0,check ticket,Pete,2021-01-12 05:30:26,COMPLETE
+55,decide,Sara,2021-01-12 05:57:07,COMPLETE
+90,register request,Pete,2021-01-12 05:59:04,COMPLETE
+37,pay compensation,Mike,2021-01-12 06:02:18,COMPLETE
+86,examine thoroughly,Sue,2021-01-12 06:16:39,COMPLETE
+26,reject request,Mike,2021-01-12 07:39:47,COMPLETE
+87,examine casually,Mike,2021-01-12 08:15:07,COMPLETE
+91,register request,Pete,2021-01-12 08:55:48,COMPLETE
+10,examine casually,Mike,2021-01-12 09:00:13,COMPLETE
+34,reject request,Mike,2021-01-12 09:00:55,COMPLETE
+71,check ticket,Mike,2021-01-12 09:44:56,COMPLETE
+61,decide,Sara,2021-01-12 09:48:47,COMPLETE
+88,examine casually,Sean,2021-01-12 11:51:00,COMPLETE
+92,register request,Pete,2021-01-12 11:55:59,COMPLETE
+73,examine casually,Sue,2021-01-12 12:05:50,COMPLETE
+64,decide,Sara,2021-01-12 12:54:21,COMPLETE
+33,reject request,Pete,2021-01-12 12:58:41,COMPLETE
+22,check ticket,Mike,2021-01-12 13:13:39,COMPLETE
+36,reinitiate request,Sara,2021-01-12 13:29:08,COMPLETE
+89,check ticket,Mike,2021-01-12 14:07:36,COMPLETE
+39,pay compensation,Mike,2021-01-12 14:32:57,COMPLETE
+93,register request,Mike,2021-01-12 14:54:13,COMPLETE
+8,examine casually,Ellen,2021-01-12 15:08:20,COMPLETE
+23,examine thoroughly,Sue,2021-01-12 15:14:30,COMPLETE
+44,reinitiate request,Sara,2021-01-12 16:05:39,COMPLETE
+32,reinitiate request,Sara,2021-01-12 16:57:10,COMPLETE
+30,reinitiate request,Sara,2021-01-12 17:14:05,COMPLETE
+90,check ticket,Mike,2021-01-12 17:34:16,COMPLETE
+94,register request,Mike,2021-01-12 17:54:12,COMPLETE
+28,check ticket,Ellen,2021-01-12 18:00:28,COMPLETE
+58,decide,Sara,2021-01-12 18:20:23,COMPLETE
+56,decide,Sara,2021-01-12 19:13:21,COMPLETE
+40,reinitiate request,Sara,2021-01-12 19:49:25,COMPLETE
+59,decide,Sara,2021-01-12 19:56:47,COMPLETE
+43,pay compensation,Ellen,2021-01-12 20:33:04,COMPLETE
+7,check ticket,Pete,2021-01-12 20:43:20,COMPLETE
+91,examine casually,Mike,2021-01-12 20:46:08,COMPLETE
+95,register request,Pete,2021-01-12 20:54:48,COMPLETE
+78,examine casually,Sean,2021-01-12 21:12:41,COMPLETE
+53,decide,Sara,2021-01-12 21:28:51,COMPLETE
+77,examine thoroughly,Sean,2021-01-12 21:51:06,COMPLETE
+76,check ticket,Mike,2021-01-12 21:56:50,COMPLETE
+21,check ticket,Ellen,2021-01-12 22:59:42,COMPLETE
+60,decide,Sara,2021-01-12 23:12:54,COMPLETE
+92,examine casually,Sue,2021-01-12 23:31:19,COMPLETE
+96,register request,Pete,2021-01-12 23:55:23,COMPLETE
+42,reinitiate request,Sara,2021-01-13 00:14:38,COMPLETE
+75,check ticket,Ellen,2021-01-13 00:44:10,COMPLETE
+63,decide,Sara,2021-01-13 01:00:24,COMPLETE
+31,examine casually,Sean,2021-01-13 01:05:40,COMPLETE
+69,decide,Sara,2021-01-13 01:42:32,COMPLETE
+93,check ticket,Mike,2021-01-13 01:52:15,COMPLETE
+97,register request,Mike,2021-01-13 02:54:13,COMPLETE
+81,examine casually,Ellen,2021-01-13 04:05:24,COMPLETE
+12,check ticket,Pete,2021-01-13 04:33:58,COMPLETE
+98,register request,Ellen,2021-01-13 05:52:12,COMPLETE
+67,decide,Sara,2021-01-13 06:08:09,COMPLETE
+94,examine thoroughly,Sean,2021-01-13 06:19:29,COMPLETE
+79,examine casually,Ellen,2021-01-13 06:29:23,COMPLETE
+74,check ticket,Pete,2021-01-13 06:42:14,COMPLETE
+66,decide,Sara,2021-01-13 07:02:28,COMPLETE
+80,check ticket,Mike,2021-01-13 08:01:41,COMPLETE
+70,decide,Sara,2021-01-13 08:37:56,COMPLETE
+99,register request,Pete,2021-01-13 08:50:50,COMPLETE
+16,examine casually,Mike,2021-01-13 09:41:13,COMPLETE
+95,check ticket,Mike,2021-01-13 10:23:40,COMPLETE
+6,decide,Sara,2021-01-13 10:40:01,COMPLETE
+41,reject request,Ellen,2021-01-13 11:23:36,COMPLETE
+62,decide,Sara,2021-01-13 13:04:21,COMPLETE
+96,examine casually,Mike,2021-01-13 13:10:03,COMPLETE
+72,decide,Sara,2021-01-13 14:00:16,COMPLETE
+4,decide,Sara,2021-01-13 14:52:34,COMPLETE
+97,check ticket,Mike,2021-01-13 15:01:12,COMPLETE
+38,reject request,Ellen,2021-01-13 16:30:36,COMPLETE
+98,examine thoroughly,Sean,2021-01-13 16:57:33,COMPLETE
+30,examine casually,Sue,2021-01-13 18:02:07,COMPLETE
+36,examine thoroughly,Sue,2021-01-13 18:39:32,COMPLETE
+83,examine casually,Ellen,2021-01-13 20:52:30,COMPLETE
+46,reinitiate request,Sara,2021-01-13 21:14:53,COMPLETE
+99,check ticket,Mike,2021-01-13 21:18:20,COMPLETE
+44,examine casually,Mike,2021-01-13 21:53:05,COMPLETE
+47,reject request,Ellen,2021-01-13 22:07:02,COMPLETE
+68,decide,Sara,2021-01-13 23:11:01,COMPLETE
+40,check ticket,Ellen,2021-01-13 23:55:32,COMPLETE
+0,decide,Sara,2021-01-14 00:05:19,COMPLETE
+87,check ticket,Mike,2021-01-14 00:06:46,COMPLETE
+32,examine casually,Ellen,2021-01-14 00:44:50,COMPLETE
+85,examine casually,Ellen,2021-01-14 00:53:36,COMPLETE
+49,pay compensation,Mike,2021-01-14 04:11:38,COMPLETE
+84,check ticket,Mike,2021-01-14 05:49:11,COMPLETE
+45,pay compensation,Ellen,2021-01-14 05:51:00,COMPLETE
+42,check ticket,Ellen,2021-01-14 06:25:59,COMPLETE
+8,decide,Sara,2021-01-14 07:38:44,COMPLETE
+65,decide,Sara,2021-01-14 07:46:44,COMPLETE
+28,examine casually,Mike,2021-01-14 07:53:13,COMPLETE
+73,decide,Sara,2021-01-14 08:47:04,COMPLETE
+22,examine casually,Sean,2021-01-14 08:48:54,COMPLETE
+78,decide,Sara,2021-01-14 09:22:49,COMPLETE
+71,decide,Sara,2021-01-14 09:24:30,COMPLETE
+52,reinitiate request,Sara,2021-01-14 09:30:10,COMPLETE
+7,decide,Sara,2021-01-14 11:05:09,COMPLETE
+88,check ticket,Pete,2021-01-14 11:10:08,COMPLETE
+89,examine thoroughly,Sean,2021-01-14 12:16:11,COMPLETE
+82,check ticket,Pete,2021-01-14 12:45:41,COMPLETE
+50,reject request,Ellen,2021-01-14 12:57:43,COMPLETE
+51,pay compensation,Mike,2021-01-14 13:18:06,COMPLETE
+10,decide,Sara,2021-01-14 13:37:21,COMPLETE
+91,check ticket,Ellen,2021-01-14 14:18:25,COMPLETE
+76,decide,Sara,2021-01-14 14:49:15,COMPLETE
+21,examine casually,Mike,2021-01-14 14:58:43,COMPLETE
+24,check ticket,Pete,2021-01-14 16:03:06,COMPLETE
+48,reinitiate request,Sara,2021-01-14 16:50:26,COMPLETE
+74,decide,Sara,2021-01-14 17:41:06,COMPLETE
+20,check ticket,Pete,2021-01-14 17:56:23,COMPLETE
+75,decide,Sara,2021-01-14 18:02:42,COMPLETE
+93,examine thoroughly,Sean,2021-01-14 18:24:32,COMPLETE
+90,examine casually,Ellen,2021-01-14 18:36:48,COMPLETE
+81,decide,Sara,2021-01-14 19:54:18,COMPLETE
+79,decide,Sara,2021-01-14 20:13:06,COMPLETE
+19,check ticket,Pete,2021-01-14 20:20:42,COMPLETE
+86,check ticket,Pete,2021-01-14 20:43:35,COMPLETE
+31,check ticket,Pete,2021-01-14 21:45:49,COMPLETE
+57,reject request,Mike,2021-01-14 22:09:46,COMPLETE
+54,reject request,Ellen,2021-01-14 22:53:08,COMPLETE
+92,check ticket,Mike,2021-01-14 23:12:24,COMPLETE
+46,examine casually,Ellen,2021-01-15 00:43:03,COMPLETE
+80,decide,Sara,2021-01-15 02:23:34,COMPLETE
+95,examine thoroughly,Sean,2021-01-15 02:28:31,COMPLETE
+16,decide,Sara,2021-01-15 03:27:00,COMPLETE
+55,reinitiate request,Sara,2021-01-15 03:34:32,COMPLETE
+64,reinitiate request,Sara,2021-01-15 03:53:28,COMPLETE
+12,decide,Sara,2021-01-15 05:15:36,COMPLETE
+23,check ticket,Mike,2021-01-15 06:14:02,COMPLETE
+61,pay compensation,Ellen,2021-01-15 07:09:19,COMPLETE
+97,examine casually,Sean,2021-01-15 09:04:51,COMPLETE
+96,check ticket,Ellen,2021-01-15 11:00:23,COMPLETE
+53,reject request,Ellen,2021-01-15 11:00:33,COMPLETE
+77,decide,Sara,2021-01-15 11:58:25,COMPLETE
+69,reject request,Pete,2021-01-15 12:46:33,COMPLETE
+56,reinitiate request,Sara,2021-01-15 13:55:33,COMPLETE
+99,examine casually,Ellen,2021-01-15 14:19:17,COMPLETE
+59,reject request,Pete,2021-01-15 14:58:06,COMPLETE
+87,decide,Sara,2021-01-15 15:09:56,COMPLETE
+52,check ticket,Ellen,2021-01-15 16:45:56,COMPLETE
+44,check ticket,Pete,2021-01-15 18:39:04,COMPLETE
+30,check ticket,Mike,2021-01-15 19:10:35,COMPLETE
+66,reinitiate request,Sara,2021-01-15 20:16:45,COMPLETE
+83,decide,Sara,2021-01-15 20:21:25,COMPLETE
+67,reinitiate request,Sara,2021-01-15 20:48:18,COMPLETE
+70,pay compensation,Ellen,2021-01-15 20:57:21,COMPLETE
+85,decide,Sara,2021-01-15 20:58:30,COMPLETE
+84,decide,Sara,2021-01-15 22:27:03,COMPLETE
+58,pay compensation,Mike,2021-01-15 23:24:07,COMPLETE
+48,examine thoroughly,Sean,2021-01-16 00:08:36,COMPLETE
+91,decide,Sara,2021-01-16 01:06:42,COMPLETE
+40,examine casually,Mike,2021-01-16 01:10:59,COMPLETE
+63,pay compensation,Mike,2021-01-16 02:16:56,COMPLETE
+42,examine casually,Mike,2021-01-16 02:29:12,COMPLETE
+28,decide,Sara,2021-01-16 02:49:31,COMPLETE
+94,check ticket,Pete,2021-01-16 03:59:15,COMPLETE
+32,check ticket,Mike,2021-01-16 04:56:08,COMPLETE
+88,decide,Sara,2021-01-16 05:39:50,COMPLETE
+62,reject request,Mike,2021-01-16 06:27:50,COMPLETE
+21,decide,Sara,2021-01-16 07:21:26,COMPLETE
+64,check ticket,Ellen,2021-01-16 08:33:49,COMPLETE
+98,check ticket,Pete,2021-01-16 09:02:39,COMPLETE
+82,decide,Sara,2021-01-16 10:19:26,COMPLETE
+90,decide,Sara,2021-01-16 10:58:54,COMPLETE
+22,decide,Sara,2021-01-16 11:03:31,COMPLETE
+72,reinitiate request,Sara,2021-01-16 11:04:47,COMPLETE
+60,reinitiate request,Sara,2021-01-16 11:31:52,COMPLETE
+20,decide,Sara,2021-01-16 11:42:37,COMPLETE
+86,decide,Sara,2021-01-16 11:45:14,COMPLETE
+55,check ticket,Pete,2021-01-16 11:47:47,COMPLETE
+31,decide,Sara,2021-01-16 12:03:11,COMPLETE
+36,check ticket,Mike,2021-01-16 12:21:44,COMPLETE
+6,reject request,Ellen,2021-01-16 13:06:41,COMPLETE
+0,pay compensation,Ellen,2021-01-16 13:40:41,COMPLETE
+46,check ticket,Mike,2021-01-16 15:45:51,COMPLETE
+24,decide,Sara,2021-01-16 16:34:20,COMPLETE
+92,decide,Sara,2021-01-16 18:27:50,COMPLETE
+19,decide,Sara,2021-01-16 19:50:29,COMPLETE
+4,reinitiate request,Sara,2021-01-16 22:46:38,COMPLETE
+67,examine casually,Sue,2021-01-16 23:09:39,COMPLETE
+66,examine casually,Ellen,2021-01-16 23:12:13,COMPLETE
+71,pay compensation,Ellen,2021-01-17 00:05:26,COMPLETE
+56,examine casually,Ellen,2021-01-17 00:45:01,COMPLETE
+7,reject request,Ellen,2021-01-17 01:54:34,COMPLETE
+79,reinitiate request,Sara,2021-01-17 02:44:16,COMPLETE
+68,pay compensation,Ellen,2021-01-17 04:15:00,COMPLETE
+65,reject request,Ellen,2021-01-17 04:21:59,COMPLETE
+89,decide,Sara,2021-01-17 04:56:33,COMPLETE
+97,decide,Sara,2021-01-17 05:07:31,COMPLETE
+23,decide,Sara,2021-01-17 05:15:46,COMPLETE
+93,decide,Sara,2021-01-17 05:53:44,COMPLETE
+81,reinitiate request,Sara,2021-01-17 06:46:03,COMPLETE
+52,examine casually,Mike,2021-01-17 07:04:11,COMPLETE
+8,reject request,Ellen,2021-01-17 08:07:32,COMPLETE
+96,decide,Sara,2021-01-17 08:10:57,COMPLETE
+73,pay compensation,Ellen,2021-01-17 08:47:22,COMPLETE
+10,pay compensation,Ellen,2021-01-17 10:15:21,COMPLETE
+78,reject request,Ellen,2021-01-17 11:50:39,COMPLETE
+42,decide,Sara,2021-01-17 13:44:40,COMPLETE
+44,decide,Sara,2021-01-17 14:02:01,COMPLETE
+74,reject request,Mike,2021-01-17 14:02:19,COMPLETE
+76,reinitiate request,Sara,2021-01-17 14:47:14,COMPLETE
+40,decide,Sara,2021-01-17 15:57:57,COMPLETE
+72,examine thoroughly,Sue,2021-01-17 16:03:50,COMPLETE
+99,decide,Sara,2021-01-17 16:11:19,COMPLETE
+75,pay compensation,Mike,2021-01-17 16:24:14,COMPLETE
+95,decide,Sara,2021-01-17 17:02:30,COMPLETE
+60,examine thoroughly,Sue,2021-01-17 17:22:32,COMPLETE
+30,decide,Sara,2021-01-17 19:56:34,COMPLETE
+32,decide,Sara,2021-01-17 20:03:52,COMPLETE
+16,reinitiate request,Sara,2021-01-17 20:24:04,COMPLETE
+94,decide,Sara,2021-01-18 02:19:25,COMPLETE
+80,reject request,Ellen,2021-01-18 04:37:01,COMPLETE
+98,decide,Sara,2021-01-18 04:45:16,COMPLETE
+64,examine casually,Mike,2021-01-18 05:09:16,COMPLETE
+77,reject request,Ellen,2021-01-18 06:40:50,COMPLETE
+28,reinitiate request,Sara,2021-01-18 06:41:46,COMPLETE
+36,decide,Sara,2021-01-18 07:25:16,COMPLETE
+55,examine thoroughly,Sue,2021-01-18 07:31:31,COMPLETE
+4,examine casually,Ellen,2021-01-18 08:26:11,COMPLETE
+12,pay compensation,Mike,2021-01-18 08:38:16,COMPLETE
+87,pay compensation,Mike,2021-01-18 08:46:44,COMPLETE
+79,examine casually,Ellen,2021-01-18 13:28:22,COMPLETE
+84,reinitiate request,Sara,2021-01-18 14:58:18,COMPLETE
+46,decide,Sara,2021-01-18 15:39:43,COMPLETE
+81,check ticket,Mike,2021-01-18 16:24:57,COMPLETE
+56,check ticket,Mike,2021-01-18 16:44:41,COMPLETE
+85,pay compensation,Mike,2021-01-18 17:12:29,COMPLETE
+76,check ticket,Mike,2021-01-18 17:19:17,COMPLETE
+48,check ticket,Pete,2021-01-18 18:00:41,COMPLETE
+88,reinitiate request,Sara,2021-01-18 18:10:05,COMPLETE
+67,check ticket,Mike,2021-01-18 18:52:07,COMPLETE
+21,pay compensation,Ellen,2021-01-18 19:02:35,COMPLETE
+83,reject request,Ellen,2021-01-18 20:57:37,COMPLETE
+20,reject request,Ellen,2021-01-18 21:00:15,COMPLETE
+16,examine casually,Mike,2021-01-18 23:16:56,COMPLETE
+90,reinitiate request,Sara,2021-01-18 23:30:34,COMPLETE
+66,check ticket,Mike,2021-01-19 00:00:45,COMPLETE
+22,reject request,Mike,2021-01-19 02:07:44,COMPLETE
+19,pay compensation,Ellen,2021-01-19 02:31:35,COMPLETE
+86,reject request,Pete,2021-01-19 03:51:13,COMPLETE
+91,reinitiate request,Sara,2021-01-19 05:07:11,COMPLETE
+52,decide,Sara,2021-01-19 06:12:35,COMPLETE
+31,pay compensation,Ellen,2021-01-19 07:28:15,COMPLETE
+82,reject request,Ellen,2021-01-19 07:50:20,COMPLETE
+28,examine casually,Sean,2021-01-19 10:55:09,COMPLETE
+24,pay compensation,Ellen,2021-01-19 17:54:40,COMPLETE
+84,examine thoroughly,Sue,2021-01-19 19:07:13,COMPLETE
+97,pay compensation,Ellen,2021-01-19 21:49:01,COMPLETE
+92,reject request,Pete,2021-01-19 22:04:43,COMPLETE
+96,reinitiate request,Sara,2021-01-20 00:44:41,COMPLETE
+42,pay compensation,Ellen,2021-01-20 01:06:51,COMPLETE
+64,decide,Sara,2021-01-20 01:09:05,COMPLETE
+88,check ticket,Mike,2021-01-20 01:27:39,COMPLETE
+89,reject request,Ellen,2021-01-20 02:52:48,COMPLETE
+4,check ticket,Mike,2021-01-20 03:07:29,COMPLETE
+90,check ticket,Ellen,2021-01-20 04:12:03,COMPLETE
+93,reinitiate request,Sara,2021-01-20 05:46:15,COMPLETE
+99,pay compensation,Ellen,2021-01-20 06:35:21,COMPLETE
+94,reject request,Mike,2021-01-20 07:00:51,COMPLETE
+76,examine casually,Sean,2021-01-20 08:14:21,COMPLETE
+79,check ticket,Mike,2021-01-20 08:44:42,COMPLETE
+67,decide,Sara,2021-01-20 10:33:15,COMPLETE
+60,check ticket,Pete,2021-01-20 10:34:55,COMPLETE
+23,pay compensation,Ellen,2021-01-20 10:35:15,COMPLETE
+44,reject request,Mike,2021-01-20 11:09:26,COMPLETE
+72,check ticket,Pete,2021-01-20 11:14:03,COMPLETE
+95,reject request,Mike,2021-01-20 12:45:14,COMPLETE
+32,reject request,Mike,2021-01-20 13:28:15,COMPLETE
+48,decide,Sara,2021-01-20 13:35:05,COMPLETE
+40,reinitiate request,Sara,2021-01-20 13:58:51,COMPLETE
+91,check ticket,Ellen,2021-01-20 15:11:14,COMPLETE
+81,examine casually,Ellen,2021-01-20 15:17:21,COMPLETE
+56,decide,Sara,2021-01-20 16:16:23,COMPLETE
+66,decide,Sara,2021-01-20 19:26:48,COMPLETE
+30,reject request,Mike,2021-01-20 21:48:04,COMPLETE
+46,pay compensation,Ellen,2021-01-20 22:49:11,COMPLETE
+55,decide,Sara,2021-01-20 23:14:45,COMPLETE
+36,pay compensation,Mike,2021-01-21 00:39:08,COMPLETE
+16,check ticket,Ellen,2021-01-21 01:27:39,COMPLETE
+98,reject request,Ellen,2021-01-21 02:33:06,COMPLETE
+28,check ticket,Pete,2021-01-21 08:08:06,COMPLETE
+96,examine thoroughly,Sean,2021-01-21 08:11:16,COMPLETE
+93,check ticket,Pete,2021-01-21 16:23:15,COMPLETE
+40,examine casually,Ellen,2021-01-21 17:25:24,COMPLETE
+4,decide,Sara,2021-01-21 20:55:02,COMPLETE
+52,reinitiate request,Sara,2021-01-21 21:31:03,COMPLETE
+90,examine casually,Mike,2021-01-22 00:52:22,COMPLETE
+60,decide,Sara,2021-01-22 04:48:31,COMPLETE
+79,decide,Sara,2021-01-22 04:49:41,COMPLETE
+76,decide,Sara,2021-01-22 05:25:32,COMPLETE
+72,decide,Sara,2021-01-22 08:00:54,COMPLETE
+88,examine casually,Ellen,2021-01-22 10:26:02,COMPLETE
+91,examine casually,Mike,2021-01-22 13:06:37,COMPLETE
+84,check ticket,Pete,2021-01-22 15:26:13,COMPLETE
+16,decide,Sara,2021-01-22 16:15:38,COMPLETE
+81,decide,Sara,2021-01-22 18:35:15,COMPLETE
+40,check ticket,Mike,2021-01-23 01:04:07,COMPLETE
+64,reinitiate request,Sara,2021-01-23 01:46:42,COMPLETE
+28,decide,Sara,2021-01-23 02:40:54,COMPLETE
+67,reject request,Ellen,2021-01-23 06:28:45,COMPLETE
+48,pay compensation,Ellen,2021-01-23 06:59:26,COMPLETE
+56,pay compensation,Ellen,2021-01-23 07:21:34,COMPLETE
+52,examine casually,Ellen,2021-01-23 10:53:28,COMPLETE
+93,examine casually,Mike,2021-01-23 11:26:25,COMPLETE
+55,reject request,Ellen,2021-01-23 14:42:05,COMPLETE
+90,decide,Sara,2021-01-23 22:13:22,COMPLETE
+66,reject request,Ellen,2021-01-24 00:03:55,COMPLETE
+96,check ticket,Pete,2021-01-24 04:12:30,COMPLETE
+84,decide,Sara,2021-01-24 04:48:57,COMPLETE
+91,decide,Sara,2021-01-24 05:26:54,COMPLETE
+88,decide,Sara,2021-01-24 07:08:21,COMPLETE
+40,decide,Sara,2021-01-24 12:56:13,COMPLETE
+64,examine casually,Mike,2021-01-24 14:01:00,COMPLETE
+4,reject request,Ellen,2021-01-24 17:28:21,COMPLETE
+79,reject request,Pete,2021-01-25 00:56:50,COMPLETE
+60,pay compensation,Ellen,2021-01-25 01:12:58,COMPLETE
+52,check ticket,Mike,2021-01-25 03:37:33,COMPLETE
+93,decide,Sara,2021-01-25 06:05:12,COMPLETE
+76,reinitiate request,Sara,2021-01-25 09:46:14,COMPLETE
+81,reject request,Ellen,2021-01-25 15:26:31,COMPLETE
+72,pay compensation,Mike,2021-01-25 15:33:47,COMPLETE
+16,reject request,Ellen,2021-01-25 17:02:08,COMPLETE
+28,reject request,Ellen,2021-01-26 02:03:22,COMPLETE
+96,decide,Sara,2021-01-26 07:45:45,COMPLETE
+64,check ticket,Pete,2021-01-26 10:06:41,COMPLETE
+90,reject request,Mike,2021-01-26 16:53:44,COMPLETE
+76,examine casually,Ellen,2021-01-26 19:58:08,COMPLETE
+52,decide,Sara,2021-01-26 21:01:22,COMPLETE
+88,reinitiate request,Sara,2021-01-26 21:29:33,COMPLETE
+84,pay compensation,Ellen,2021-01-26 22:30:54,COMPLETE
+91,pay compensation,Mike,2021-01-27 00:04:09,COMPLETE
+40,reject request,Pete,2021-01-27 08:46:51,COMPLETE
+88,examine casually,Ellen,2021-01-28 02:52:14,COMPLETE
+64,decide,Sara,2021-01-28 02:54:05,COMPLETE
+76,check ticket,Mike,2021-01-28 06:55:26,COMPLETE
+93,reject request,Mike,2021-01-28 22:14:35,COMPLETE
+52,reject request,Pete,2021-01-29 08:32:51,COMPLETE
+96,pay compensation,Ellen,2021-01-29 11:11:31,COMPLETE
+88,check ticket,Mike,2021-01-29 15:42:58,COMPLETE
+76,decide,Sara,2021-01-30 02:22:02,COMPLETE
+64,reject request,Ellen,2021-01-30 18:37:53,COMPLETE
+88,decide,Sara,2021-01-31 11:30:04,COMPLETE
+76,reject request,Ellen,2021-02-02 10:02:06,COMPLETE
+88,reject request,Mike,2021-02-03 00:57:09,COMPLETE
